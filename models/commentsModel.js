@@ -7,8 +7,8 @@ const commentSchema = new Schema({
     
     type:{type:String , required:true},
     text:{type:String , required:true},
-
-  
+    subject:{type:String, required:true},
+    name:{type:String, required:false}
 
 
 });
