@@ -14,7 +14,7 @@ connectDB()
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
-app.use("/users",commentController)
+app.use("/",commentController)
 
 
 app.listen(port,()=>{

@@ -1,4 +1,4 @@
-const commentModel =  require("../models/commentsModel");commentModel
+const commentModel =  require("../models/commentsModel");
 
 const getAllcomments = ()=>{
 
