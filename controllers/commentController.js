@@ -17,9 +17,9 @@ router.route("/:id").get( async (req,res)=>{
 
 router.route("/").post(async (req,res)=>{
   try{
-   const movie = req.body;
-   
-   const respon = await commentBL.addcomment(movie) 
+   const comment = req.body;
+   console.log(comment)
+   const respon = await commentBL.addcomment(comment) 
    return res.json(respon)
   }
   catch(err){
