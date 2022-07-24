@@ -19,6 +19,7 @@ router.route("/:id").get( async (req,res)=>{
 
 
 router.route("/rotter").get( async (req,res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
     const options ={
         headers:{
   
