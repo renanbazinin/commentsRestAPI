@@ -19,9 +19,17 @@ router.route("/:id").get( async (req,res)=>{
 
 
 router.route("/rotter").get( async (req,res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    const options ={
 
-    axios.get("https://rotter.net/rss/rotternews.xml")  
+            'x-apikey': '59a7ad19f5a9fa0808f11931',
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+
+    }
+    axios.get("https://rotter.net/rss/rotternews.xml",options)  
     .then(res => {
+        
         console.log(`statusCode: ${res.status}`);
         console.log(res);
         return res.json(obj)
