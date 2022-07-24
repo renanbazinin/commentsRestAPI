@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router()
 const commentBL = require("../services/commentsServices")
+const http = require('http');
+
 router.route("/").get( async (req,res) =>{
 
 
@@ -14,6 +16,24 @@ router.route("/:id").get( async (req,res)=>{
     const obj = await commentBL.getcommentsById(id)
     return res.json(obj)
 })
+
+
+router.route("/rotter").get( async (req,res)=>{
+    const options = {
+        hostname: 'https://rotter.net/rss/rotternews.xml',
+        method: 'GET',
+      };
+      https.request(options, res => {
+        console.log(`statusCode: ${res.statusCode}`);
+      
+        res.on('data', d => {
+          process.stdout.write(d);
+          console.log(res)
+          return res;
+        });
+      });
+})
+
 
 router.route("/").post(async (req,res)=>{
   try{
