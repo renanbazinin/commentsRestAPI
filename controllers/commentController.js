@@ -27,10 +27,10 @@ router.route("/rotter").get( async (req,res)=>{
         }
 
         }
-        const res = await axios.get("https://rotter.net/rss/rotternews.xml",options) 
+        res = await axios.get("https://rotter.net/rss/rotternews.xml",options) 
         console.log("respon to rotter") 
         console.log(res)
-        return res
+        return res.json(obj)
     
 
 })
