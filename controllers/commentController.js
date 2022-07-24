@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router()
 const commentBL = require("../services/commentsServices")
-const http = require('http');
+const axios = require('axios');
 
 router.route("/").get( async (req,res) =>{
 
@@ -19,19 +19,17 @@ router.route("/:id").get( async (req,res)=>{
 
 
 router.route("/rotter").get( async (req,res)=>{
-    const options = {
-        hostname: 'https://rotter.net/rss/rotternews.xml',
-        method: 'GET',
-      };
-      https.request(options, res => {
-        console.log(`statusCode: ${res.statusCode}`);
-      
-        res.on('data', d => {
-          process.stdout.write(d);
-          console.log(res)
-          return res;
-        });
+
+    axios.get("https://rotter.net/rss/rotternews.xml")  
+    .then(res => {
+        console.log(`statusCode: ${res.status}`);
+        console.log(res);
+        return res.json(obj)
+      }) .catch(error => {
+        console.error(error);
       });
+
+
 })
 
 
