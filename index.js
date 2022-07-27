@@ -3,7 +3,8 @@ const cors = require("cors");
 const connectDB = require("./configs/db");
 
 const commentController = require("./controllers/commentController")
-
+app.use(cors({origin: 'http://localhost:3000'}));
+                      ;
 
 const app = express();
 //const port = 8001;
