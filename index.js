@@ -8,7 +8,7 @@ const commentController = require("./controllers/commentController")
 const app = express();
 //const port = 8001;
 const port = process.env.PORT;
-app.use(cors({origin: 'http://localhost:3000'}));
+app.use(cors());
 connectDB()
 //They converted  what
 app.use(express.json());
