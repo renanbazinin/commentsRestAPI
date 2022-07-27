@@ -3,13 +3,12 @@ const cors = require("cors");
 const connectDB = require("./configs/db");
 
 const commentController = require("./controllers/commentController")
-app.use(cors({origin: 'http://localhost:3000'}));
-                      
+
 
 const app = express();
 //const port = 8001;
 const port = process.env.PORT;
-app.use(cors());
+app.use(cors({origin: 'http://localhost:3000'}));
 connectDB()
 //They converted  what
 app.use(express.json());
