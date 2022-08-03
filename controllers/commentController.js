@@ -22,7 +22,7 @@ router.route("/rotter").get( async (req,res)=>{
 
     
 
-    return res("hello world")
+    return res.send("hello world")
 
     try{
     //res.header("Access-Control-Allow-Origin", "*");
