@@ -18,7 +18,18 @@ router.route("/:id").get( async (req,res)=>{
 })
 
 
-router.route("/rotter").get( async (req,res)=>{
+router.get("/rotter", async (req, res, next) => {
+    console.log("'/test' call");
+    try {
+      const res = await axios.get("https://rotter.net/rss/rotternews.xml");
+      res.json(data);
+    }
+    catch (err) {
+      next(err)
+    }
+  })
+
+router.route("/rotter2").get( async (req,res)=>{
 
     
 
