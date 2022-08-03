@@ -19,6 +19,9 @@ router.route("/:id").get( async (req,res)=>{
 
 
 router.route("/rotter").get( async (req,res)=>{
+
+    return res.json("hello world")
+
     try{
     //res.header("Access-Control-Allow-Origin", "*");
     const options ={
