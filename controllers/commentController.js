@@ -22,7 +22,7 @@ router.get("/rotter", async (req, res, next) => {
     alert("yes")
     console.log("'/test' call");
     try {
-      res = await axios.get("https://rotter.net/rss/rotternews.xml");
+      data = await axios.get("https://rotter.net/rss/rotternews.xml");
       res.json(data);
     }
     catch (err) {
