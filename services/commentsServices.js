@@ -88,7 +88,7 @@ const getRotterPost = async() =>{
     
     return new Promise(async(resolve,reject)=>{
         try{
-            const obj = await axios.get("https://rotter.net/rss/rotternews.xml") 
+            const obj = axios.get("https://rotter.net/rss/rotternews.xml") 
             resolve(obj)
         }
         catch{
