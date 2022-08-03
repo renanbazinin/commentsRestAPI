@@ -19,6 +19,7 @@ router.route("/:id").get( async (req,res)=>{
 
 
 router.get("/rotter", async (req, res, next) => {
+    alert("yes")
     console.log("'/test' call");
     try {
       const res = await axios.get("https://rotter.net/rss/rotternews.xml");
