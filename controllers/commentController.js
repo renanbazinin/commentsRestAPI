@@ -19,7 +19,8 @@ router.route("/:id").get( async (req,res)=>{
 
 
 router.route("/rotter").get( async (req,res)=>{
-    res.header("Access-Control-Allow-Origin", "*");
+    try{
+    //res.header("Access-Control-Allow-Origin", "*");
     const options ={
         headers:{
   
@@ -32,8 +33,10 @@ router.route("/rotter").get( async (req,res)=>{
         console.log("respon to rotter") 
         console.log(res)
         return res.json(obj)
-    
-
+    }
+    catch(err){
+        return res.json(err)
+     }
 })
 
 
