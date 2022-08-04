@@ -34,24 +34,10 @@ router.route("/rotter2").get( async (req,res)=>{
 
     
 
-    return res.send("hello world")
 
     try{
-    //res.header("Access-Control-Allow-Origin", "*");
-    const options ={
-        headers:{
-  
-        'Access-Control-Allow-Origin' : '*',
-    
-        }
-
-        }
-        console.log("respon to rotter") 
-        const obj = await axios.get("https://rotter.net/rss/rotternews.xml",options) 
-        
-        console.log("respon to rotter") 
-        console.log(obj)
-        return res.json(obj)
+        const respon = await commentBL.getRotterPost()
+        return res.json(respon)
     }
     catch(err){
         return res.json(err)
